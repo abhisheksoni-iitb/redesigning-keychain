@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keychain AI - Post Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevents whole page scroll */
+        }
+        .card-tag {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+        }
+        .left-column, .right-column {
+            height: calc(100vh - 81px); /* Full height minus header */
+        }
+        /* Custom styles for form inputs */
+        .form-input {
+            @apply w-full px-3 py-2 text-gray-900 border border-gray-400 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-gray-700 mb-1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-20">
+        <div class="mx-auto flex h-full flex-col justify-center gap-4 px-4 sm:px-6 lg:px-8">
+            <div class="relative flex justify-between items-center py-4">
+                <div class="flex">
+                    <img src="https://images.keychain.com/webapp/dashboard/_next/static/media/keychain.f7d0c540.svg" alt="Keychain Logo" class="h-8 w-auto">
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" class="justify-center whitespace-nowrap transition-colors h-9 flex items-center bg-white px-4 py-2 text-right text-xs font-semibold shadow rounded-md hover:bg-gray-100 border border-gray-200">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row w-full">
+        <!-- Left Column: Form -->
+        <div class="lg:w-1/3 w-full bg-white p-6 lg:p-8 border-r border-gray-200 overflow-y-auto left-column">
+             <div class="max-w-md w-full mx-auto">
+                <!-- Back Button -->
+                <button class="flex items-center text-sm font-semibold text-gray-600 hover:text-gray-900 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    Back
+                </button>
+
+                <!-- Form Header -->
+                <h1 class="text-2xl font-bold text-gray-900">Post your "Protein Water" project</h1>
+                <p class="text-gray-600 mt-2 mb-8">Fill in the details below to get matched with the best suppliers.</p>
+
+                <!-- Form -->
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="product-name" class="form-label">Your Product</label>
+                        <input type="text" name="product-name" id="product-name" class="form-input" placeholder="Flavored Protein Water">
+                    </div>
+
+                    <div>
+                        <label for="product-type" class="form-label">Product Type</label>
+                        <input type="text" name="product-type" id="product-type" class="form-input bg-gray-100" value="Protein Water" readonly>
+                    </div>
+
+                    <div>
+                        <label for="annual-volume" class="form-label">Approximate annual volume</label>
+                        <select id="annual-volume" name="annual-volume" class="form-input">
+                            <option>0 - 10K units</option>
+                            <option>10K - 50K units</option>
+                            <option>50K - 250K units</option>
+                            <option>250K+ units</option>
+                        </select>
+                    </div>
+
+                     <div>
+                        <label for="allergens" class="form-label">Allergens <span class="text-gray-500">(Optional)</span></label>
+                        <input type="text" name="allergens" id="allergens" class="form-input" placeholder="e.g., Soy-free, Gluten-free">
+                    </div>
+
+                     <div>
+                        <label for="certifications" class="form-label">Certifications <span class="text-gray-500">(Optional)</span></label>
+                        <input type="text" name="certifications" id="certifications" class="form-input" placeholder="e.g., Organic, Non-GMO">
+                    </div>
+
+                    <div>
+                        <label for="additional-details" class="form-label">Additional Details <span class="text-gray-500">(Optional)</span></label>
+                        <textarea id="additional-details" name="additional-details" rows="4" class="form-input" placeholder="Describe your product in more detail..."></textarea>
+                    </div>
+
+                    <!-- Contact Information Section -->
+                    <div class="pt-6 border-t border-gray-200">
+                         <h2 class="text-lg font-semibold text-gray-900">Your Contact Information</h2>
+                         <div class="space-y-6 mt-4">
+                            <div>
+                                <label for="full-name" class="form-label">Full Name</label>
+                                <input type="text" name="full-name" id="full-name" class="form-input" placeholder="Jane Doe">
+                            </div>
+                            <div>
+                                <label for="company-name" class="form-label">Company Name</label>
+                                <input type="text" name="company-name" id="company-name" class="form-input" placeholder="Your Company Inc.">
+                            </div>
+                             <div>
+                                <label for="work-email" class="form-label">Work Email</label>
+                                <input type="email" name="work-email" id="work-email" class="form-input" placeholder="you@company.com">
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="anonymous" name="anonymous" type="checkbox" class="h-4 w-4 text-yellow-500 border-gray-300 rounded focus:ring-yellow-400">
+                        <label for="anonymous" class="ml-2 block text-sm text-gray-900">Post project anonymously</label>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-semibold text-black bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors">
+                            Continue
+                        </button>
+                    </div>
+                     <p class="text-xs text-center text-gray-500">
+                        By continuing, you agree to our Terms of Service. This will also create your free Keychain account.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column: Product Visuals (UNCHANGED) -->
+        <div class="lg:w-2/3 w-full bg-gray-100 p-4 lg:p-8 overflow-y-auto right-column">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">This is how your "Protein Water" could look</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 
+                <!-- Card 1 -->
+                <div class="group relative flex flex-col rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                    <div class="relative">
+                        <img alt="Classic Protein Water" src="https://images.keychain.com/ai-spec/fb75af43-f12c-4a8a-9678-d356956df309_logo.png" class="aspect-square w-full rounded-t-md object-cover">
+                         <div class="absolute bottom-2 left-2 flex flex-wrap gap-2">
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">High Demand</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 p-4">
+                        <p class="text-sm font-bold text-gray-900">Classic Protein Water</p>
+                        <p class="text-xs font-semibold text-gray-600">Flavored Protein Water, Square Bottle, 16.9 oz</p>
+                        <div class="flex items-center gap-1.5 mt-1">
+                             <span class="text-xs font-medium text-gray-600"><span class="font-extrabold text-gray-900">$16.87M</span> estimated 3-yr sales</span>
+                        </div>
+                         <span class="text-xs font-medium text-gray-700 mt-2">Enjoy our classic protein water, featuring 10g of soy protein and a hint of natural sweetness.</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative flex flex-col rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                    <div class="relative">
+                        <img alt="Protein Hydrate" src="https://images.keychain.com/ai-spec/14fd8773-ea59-4056-97a6-527f53282d6c_logo.png" class="aspect-square w-full rounded-t-md object-cover">
+                         <div class="absolute bottom-2 left-2 flex flex-wrap gap-2">
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 p-4">
+                        <p class="text-sm font-bold text-gray-900">Protein Hydrate</p>
+                        <p class="text-xs font-semibold text-gray-600">Flavored Protein Water, Bottle, 20 oz</p>
+                        <div class="flex items-center gap-1.5 mt-1">
+                             <span class="text-xs font-medium text-gray-600"><span class="font-extrabold text-gray-900">$15.29M</span> estimated 3-yr sales</span>
+                        </div>
+                         <span class="text-xs font-medium text-gray-700 mt-2">Replenish your muscles with our protein hydrate, containing 15g of whey protein isolate and essential electrolytes.</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative flex flex-col rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                    <div class="relative">
+                        <img alt="Pure Hydration Protein Water" src="https://images.keychain.com/ai-spec/bb36a0b8-2b8c-4e49-afc2-6e769cdfd50c_logo.png" class="aspect-square w-full rounded-t-md object-cover">
+                        <div class="absolute bottom-2 left-2 flex flex-wrap gap-2">
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">High Demand</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 p-4">
+                        <p class="text-sm font-bold text-gray-900">Pure Hydration Protein Water</p>
+                        <p class="text-xs font-semibold text-gray-600">Flavored Protein Water, Bottle, 16.9 oz</p>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <span class="text-xs font-medium text-gray-600"><span class="font-extrabold text-gray-900">$14.57M</span> estimated 3-yr sales</span>
+                        </div>
+                        <span class="text-xs font-medium text-gray-700 mt-2">Refresh with our protein-packed water, infused with 15g of whey protein isolate and a hint of natural sweetness.</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group relative flex flex-col rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                    <div class="relative">
+                        <img alt="Protein Infusion Water" src="https://images.keychain.com/ai-spec/6a0dfd8b-ce8c-42fa-a32b-698a9e473873_logo.png" class="aspect-square w-full rounded-t-md object-cover">
+                         <div class="absolute bottom-2 left-2 flex flex-wrap gap-2">
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">Low MOQ Potential</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 p-4">
+                        <p class="text-sm font-bold text-gray-900">Protein Infusion Water</p>
+                        <p class="text-xs font-semibold text-gray-600">Flavored Protein Water, Square Bottle, 20 oz</p>
+                        <div class="flex items-center gap-1.5 mt-1">
+                             <span class="text-xs font-medium text-gray-600"><span class="font-extrabold text-gray-900">$12.08M</span> estimated 3-yr sales</span>
+                        </div>
+                         <span class="text-xs font-medium text-gray-700 mt-2">Stay hydrated and energized with our protein water, featuring 10g of pea protein and a touch of stevia.</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group relative flex flex-col rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                    <div class="relative">
+                        <img alt="Collagen Protein Water" src="https://images.keychain.com/ai-spec/b2fd8f6e-02a9-4b60-9609-a9cf0400bb0f_logo.png" class="aspect-square w-full rounded-t-md object-cover">
+                         <div class="absolute bottom-2 left-2 flex flex-wrap gap-2">
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">Trending Ingredient</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 p-4">
+                        <p class="text-sm font-bold text-gray-900">Collagen Protein Water</p>
+                        <p class="text-xs font-semibold text-gray-600">Flavored Protein Water, Bottle, 16 oz</p>
+                        <div class="flex items-center gap-1.5 mt-1">
+                             <span class="text-xs font-medium text-gray-600"><span class="font-extrabold text-gray-900">$11.94M</span> estimated 3-yr sales</span>
+                        </div>
+                         <span class="text-xs font-medium text-gray-700 mt-2">Nourish your skin and joints with our collagen-infused protein water, containing 12g of collagen and a hint of citrus.</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group relative flex flex-col rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:scale-[1.01] hover:shadow-lg">
+                    <div class="relative">
+                        <img alt="Plant-Based Protein Water" src="https://images.keychain.com/ai-spec/6b555408-45a0-402f-bda5-98a78065847a_logo.png" class="aspect-square w-full rounded-t-md object-cover">
+                         <div class="absolute bottom-2 left-2 flex flex-wrap gap-2">
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">High Margin</span>
+                           <span class="card-tag text-xs font-semibold px-2 py-1 rounded-full">Sustainable Packaging</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 p-4">
+                        <p class="text-sm font-bold text-gray-900">Plant-Based Protein Water</p>
+                        <p class="text-xs font-semibold text-gray-600">Flavored Protein Water, Square Bottle, 18.9 oz</p>
+                        <div class="flex items-center gap-1.5 mt-1">
+                             <span class="text-xs font-medium text-gray-600"><span class="font-extrabold text-gray-900">$11.75M</span> estimated 3-yr sales</span>
+                        </div>
+                         <span class="text-xs font-medium text-gray-700 mt-2">Quench your thirst with our plant-based protein water, featuring 12g of pea and rice protein and a touch of natural sweetness.</span>
+                    </div>
+                </div>
+                 <!-- New Button Added at the end of the scroll -->
+                <div class="md:col-span-2 flex justify-center pt-8">
+                     <button class="w-full md:w-auto bg-white text-gray-700 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition-colors border border-gray-300">
+                        Create a Free Account to Explore More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
