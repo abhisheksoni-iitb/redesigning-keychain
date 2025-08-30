@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keychain: Platform for CPG manufacturing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="relative flex min-h-screen w-full flex-col items-center">
+        <!-- Header -->
+        <header class="bg-white border-b sticky top-0 z-20 w-full">
+            <div class="mx-auto flex h-full max-w-[1440px] justify-between items-center p-4 sm:px-6 lg:p-8">
+                <div class="flex flex-shrink-0 items-center">
+                    <img src="https://images.keychain.com/webapp/marketing/_next/static/media/keychain.f7d0c540.svg" alt="Keychain Logo" class="h-8 w-auto">
+                </div>
+                <div class="hidden items-center gap-2 lg:flex">
+                    <a href="#" class="font-semibold text-gray-800 hover:text-black transition-colors px-4 py-2 rounded-md">AI for Manufacturers</a>
+                    <a href="#" class="font-semibold text-gray-800 hover:text-black transition-colors px-4 py-2 rounded-md">AI for Brands & Retailers</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="#" class="justify-center whitespace-nowrap transition-colors h-9 flex items-center bg-white px-4 py-2 text-right text-xs font-semibold shadow rounded-md hover:bg-gray-100 border border-gray-200">Sign in</a>
+                    <a href="#" class="justify-center whitespace-nowrap transition-colors h-9 flex items-center bg-yellow-300 text-black px-4 py-2 text-right text-xs font-semibold shadow rounded-md hover:bg-yellow-400">Get Access</a>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <div class="relative h-fit w-full max-w-[1440px] flex justify-center">
+            <div class="col-span-full flex flex-col items-center gap-12 px-6 py-16 md:gap-16 md:px-8 md:py-40">
+                <div class="flex max-w-5xl flex-col items-center gap-4 text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                        Simplify your supply chain<br>with <span class="text-yellow-400">AI-Powered</span> CPG
+                    </h1>
+                    <p class="max-w-2xl text-sm md:text-base font-medium text-gray-600">
+                        Create products, connect with suppliers, and manage your entire supply chain - all with the power of Keychain AI.
+                    </p>
+                </div>
+
+                <div class="min-h-11 min-w-full md:min-h-[72px] md:min-w-[650px]">
+                    <div class="relative flex w-full flex-col gap-5 rounded-lg border border-gray-300 bg-white p-3 shadow-md shadow-gray-900/5 md:p-4">
+                        <div class="flex flex-col gap-1">
+                            <textarea id="ai-prompt" name="description" rows="4" placeholder="I want to make... protein bars" class="block w-full resize-none rounded-sm border-none px-0 py-0 font-normal text-gray-900 outline-none placeholder:text-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-transparent"></textarea>
+                            <!-- NEW: Sub-headline for engagement -->
+                            <p class="text-center text-xs text-gray-500 pt-2">Tap into our network of 30,000+ vetted suppliers.</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-end gap-2 md:flex-row">
+                            <div class="w-full md:w-auto">
+                                <button type="button" class="rounded-md flex gap-2 items-center text-center justify-center whitespace-nowrap cursor-pointer outline-none font-semibold select-none bg-yellow-300 text-black border hover:bg-yellow-400 h-9 px-5 py-2 text-sm w-full relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-4 h-4"><path fill-rule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clip-rule="evenodd"></path></svg>
+                                    Generate Products
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // NEW: Animated placeholder text script
+        const placeholders = [
+            "I want to make... protein bars",
+            "I want to make... canned cold brew coffee",
+            "I want to make... gluten-free cookies",
+            "I want to make... a new energy drink"
+        ];
+        let currentPlaceholder = 0;
+        const promptTextarea = document.getElementById('ai-prompt');
+
+        setInterval(() => {
+            currentPlaceholder = (currentPlaceholder + 1) % placeholders.length;
+            promptTextarea.placeholder = placeholders[currentPlaceholder];
+        }, 2000);
+    </script>
+</body>
+</html>
+
